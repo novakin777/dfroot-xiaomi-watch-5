@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -262,11 +263,22 @@ public class MainActivity extends Activity implements IReporter {
                 })
                 .create();
         alertDialog.setOnShowListener(ignored -> {
-                    int accent = 0xFF8FC79A;
-                    alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(accent);
-                    alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(accent);
+                    Button clearButton = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                    clearButton.setTextColor(0xFFFFFFFF);
+                    clearButton.setBackground(dialogButtonBackground(0xFF6FAF7B));
+                    Button cancelButton = alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+                    cancelButton.setTextColor(0xFF37423A);
+                    cancelButton.setBackground(dialogButtonBackground(0xFFE8EEE9));
                 });
         alertDialog.show();
+    }
+
+    private Drawable dialogButtonBackground(int color) {
+        float radius = 24 * getResources().getDisplayMetrics().density;
+        GradientDrawable background = new GradientDrawable();
+        background.setColor(color);
+        background.setCornerRadius(radius);
+        return background;
     }
 
     private void runExploit() {
