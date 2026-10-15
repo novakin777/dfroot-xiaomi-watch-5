@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="README.md">Русский</a> · <a href="README.en.md">English</a>
+  <a href="../README.md">Русский</a>
 </p>
 
 <p align="center">
-  <img src=".github/icon.png" width="96" />
+  <img src="icon.png" width="96" />
 </p>
 
 # DFRoot — Xiaomi Watch 5 ARM32 build
@@ -45,11 +45,11 @@ DFRoot uses a kernel vulnerability and can crash or reboot a device. A successfu
 
 [WearBridgeADB](https://github.com/novakin777/WearBridgeADB) can run commands on the watch with root privileges after KernelSU grants root to the WearBridge app on the watch. WearBridge does not obtain root by itself.
 
-See [CHANGELOG.md](CHANGELOG.md) for this fork's release notes.
+See [CHANGELOG.md](../CHANGELOG.md) for this fork's release notes.
 
 ## License
 
-This project is distributed under the [GNU General Public License v3.0](LICENSE).
+This project is distributed under the [GNU General Public License v3.0](../LICENSE).
 
 ## AI assistance
 
