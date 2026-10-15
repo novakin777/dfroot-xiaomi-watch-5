@@ -1,6 +1,3 @@
-<p align="center">
-  <a href="README.md">Русский</a> · <a href="README.en.md">English</a>
-</p>
 
 <p align="center">
   <img src=".github/icon.png" width="96" />
