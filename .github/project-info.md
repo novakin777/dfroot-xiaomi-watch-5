@@ -49,7 +49,14 @@ See [CHANGELOG.md](../CHANGELOG.md) for this fork's release notes.
 
 ## License
 
-This project is distributed under the [GNU General Public License v3.0](../LICENSE).
+Different parts of this repository may have different license terms:
+
+- DFRoot fork code and the kernel module source are distributed under the [GNU General Public License v3](../LICENSE). GPL-3.0 governs copying and distribution of these parts.
+- [`app/src/main/jni/include.inc`](../app/src/main/jni/include.inc) contains code by Odzhan under the [BSD 3-Clause License](../app/src/main/jni/include.inc). Redistribution must retain its copyright notice, license conditions, and disclaimer; using the author's name to endorse or promote derived products requires prior written permission.
+- The Gradle Wrapper scripts [`gradlew`](../gradlew) and [`gradlew.bat`](../gradlew.bat) contain material under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), as stated in their headers.
+- Third-party libraries and other included materials retain their own licenses and notices. The repository's root license does not replace those terms.
+
+Before redistributing a modified build, check the licenses of all included components and preserve their applicable notices.
 
 ## AI assistance
 
