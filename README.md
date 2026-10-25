@@ -24,6 +24,7 @@ Install the APK from a release. The release notes identify the version and chang
 - Device: Xiaomi Watch 5 (`blenny`)
 - Android: 16, API 36
 - DFRoot r17 confirmed working firmware on the global Xiaomi Watch 5: Xiaomi OS 3.0.3.70 (`OS3.0.3.70.WO61WMIXM`), build `xiaomi/blenny/blenny:16/BP2A.250805.014/OS3.0.3.70.WO61WMIXM:user/release-keys`.
+- Root access was confirmed with the bootloader locked, without flashing a custom kernel.
 - App/native userspace ABI: `armeabi-v7a` (32-bit)
 - Kernel: `6.6.92-android15-8-ga352c6faabe2-ab14461313-4k`; KMI: `android15-6.6`
 - Kernel and APK architectures are different: an APK build does not build or validate the kernel module.
