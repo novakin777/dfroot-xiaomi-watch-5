@@ -22,7 +22,7 @@
 
 - Устройство: Xiaomi Watch 5 (`blenny`)
 - Android: 16, API 36
-- Прошивка, на которой подтверждена работа DFRoot r17: Xiaomi OS 3.0.3.70 (`OS3.0.3.70.WO61WMIXM`), fingerprint `xiaomi/blenny/blenny:16/BP2A.250805.014/OS3.0.3.70.WO61WMIXM:user/release-keys`.
+- Прошивка, на которой подтверждена работа DFRoot r17 на глобальной версии Xiaomi Watch 5: Xiaomi OS 3.0.3.70 (`OS3.0.3.70.WO61WMIXM`), fingerprint `xiaomi/blenny/blenny:16/BP2A.250805.014/OS3.0.3.70.WO61WMIXM:user/release-keys`.
 - ABI приложения и userspace: `armeabi-v7a` (32 бита)
 - Ядро: `6.6.92-android15-8-ga352c6faabe2-ab14461313-4k`; KMI: `android15-6.6`
 - Архитектуры APK и ядра различаются: сборка APK не собирает и не проверяет модуль ядра.
