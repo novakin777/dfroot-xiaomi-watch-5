@@ -1,6 +1,6 @@
 # Releases / Релизы
 
-## 4.1-blenny-arm32-r17-color (versionCode 420; based on r17)
+## 4.1-blenny-arm32-r17 (versionCode 418)
 
 ### English
 

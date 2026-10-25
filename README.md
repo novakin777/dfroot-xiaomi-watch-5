@@ -10,7 +10,7 @@
 
 This fork is based on DFRoot and adapted for the Xiaomi Watch 5 (`blenny`). The tested app build targets the watch's 32-bit `armeabi-v7a` Android userspace; the watch kernel is 64-bit. The included kernel module is a separate component and must match the device kernel/KMI.
 
-> **Status:** r17 is the base. This repository build changes only the text color of the **Clear** and **Cancel** buttons in the clear-log confirmation dialog to match the app's green accent. Adapting DFRoot to other devices is up to their owners and requires device-specific work; this build targets the Watch 5.
+> **Status:** The current release is based on r17 and targets the Xiaomi Watch 5. Adapting DFRoot to other devices is up to their owners and requires device-specific work.
 
 ## Download
 

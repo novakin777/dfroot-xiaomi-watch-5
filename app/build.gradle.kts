@@ -17,8 +17,8 @@ android {
         applicationId = "df.root"
         minSdk = 32
         targetSdk = 37
-        versionCode = 420
-        versionName = "4.1-blenny-arm32-r17-color"
+        versionCode = 418
+        versionName = "4.1-blenny-arm32-r17"
 
         ndk {
             abiFilters += listOf("armeabi-v7a")
