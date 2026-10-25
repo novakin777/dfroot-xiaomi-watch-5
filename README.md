@@ -1,60 +1,63 @@
+<p align="center">
+  <a href="README.ru.md">Русский</a>
+</p>
 
 <p align="center">
   <img src=".github/icon.png" width="96" />
 </p>
 
-# DFRoot — сборка для Xiaomi Watch 5 ARM32
+# DFRoot — Xiaomi Watch 5 ARM32 build
 
-Это форк DFRoot, адаптированный для Xiaomi Watch 5 (`blenny`). Приложение собрано для 32-битного Android userspace часов (`armeabi-v7a`), хотя ядро часов 64-битное. Модуль ядра — отдельный компонент; он должен соответствовать ядру и KMI устройства.
+This fork is based on DFRoot and adapted for the Xiaomi Watch 5 (`blenny`). The tested app build targets the watch's 32-bit `armeabi-v7a` Android userspace; the watch kernel is 64-bit. The included kernel module is a separate component and must match the device kernel/KMI.
 
-> **Состояние:** основа — r17. В этой сборке изменён только цвет текста кнопок **Clear** и **Cancel** в диалоге подтверждения очистки логов: он соответствует зелёному акценту приложения. Адаптация DFRoot под другие устройства — задача их владельцев и требует отдельной работы под конкретное устройство; эта сборка рассчитана на Watch 5.
+> **Status:** r17 is the base. This repository build changes only the text color of the **Clear** and **Cancel** buttons in the clear-log confirmation dialog to match the app's green accent. Adapting DFRoot to other devices is up to their owners and requires device-specific work; this build targets the Watch 5.
 
-## Скачать
+## Download
 
-- [Все релизы](https://github.com/novakin777/dfroot-xiaomi-watch-5/releases)
-- [Последний релиз](https://github.com/novakin777/dfroot-xiaomi-watch-5/releases/latest)
+- [Releases](https://github.com/novakin777/dfroot-xiaomi-watch-5/releases)
+- [Latest release](https://github.com/novakin777/dfroot-xiaomi-watch-5/releases/latest)
 
-Устанавливайте APK из релиза; изменения перечислены в его описании.
+Install the APK from a release. The release notes identify the version and changes.
 
-## Профиль устройства
+## Device profile
 
-- Устройство: Xiaomi Watch 5 (`blenny`)
+- Device: Xiaomi Watch 5 (`blenny`)
 - Android: 16, API 36
-- ABI приложения и userspace: `armeabi-v7a` (32 бита)
-- Ядро: `6.6.92-android15-8-ga352c6faabe2-ab14461313-4k`; KMI: `android15-6.6`
-- Архитектуры APK и ядра различаются: сборка APK не собирает и не проверяет модуль ядра.
+- App/native userspace ABI: `armeabi-v7a` (32-bit)
+- Kernel: `6.6.92-android15-8-ga352c6faabe2-ab14461313-4k`; KMI: `android15-6.6`
+- Kernel and APK architectures are different: an APK build does not build or validate the kernel module.
 
-## Использование
+## Usage
 
-1. Установите APK этого форка из раздела [Releases](https://github.com/novakin777/dfroot-xiaomi-watch-5/releases).
-2. Установите и запустите Shizuku, затем выдайте DFRoot разрешение Shizuku. Для корректной работы гонки эксплойта Shizuku обязателен, а не только нужен для сбора логов. В текущей сборке через него также захватывается системный `logcat`; без работающего сервиса и разрешения эксплойт не стартует.
-3. Установите совместимый менеджер KernelSU с `libksud.so` из [репозитория ARM32 для Xiaomi Watch 5](https://github.com/novakin777/kernelsu-arm32_xiaomi_watch_5) и выберите его в DFRoot.
-4. До запуска ознакомьтесь с рисками для устройства и способом восстановления. При сбое сохраните диагностические логи.
+1. Install this fork's APK from [Releases](https://github.com/novakin777/dfroot-xiaomi-watch-5/releases).
+2. Install and start Shizuku, then grant DFRoot Shizuku permission. Shizuku is required for the exploit race to work correctly, not just for log capture. This build also uses Shizuku to capture system `logcat`; the exploit will not start if the service is stopped or permission is missing.
+3. Install a compatible KernelSU manager with `libksud.so` from the [Xiaomi Watch 5 ARM32 repository](https://github.com/novakin777/kernelsu-arm32_xiaomi_watch_5), then select it in DFRoot.
+4. Review the device-specific risks and recovery options before starting the exploit. Keep a copy of diagnostic logs if a run fails.
 
-DFRoot использует уязвимость ядра и может вызвать сбой или перезагрузку устройства. Запуск приложения или сообщение на экране сами по себе не доказывают, что root доступен другим приложениям; проверьте его отдельно.
+DFRoot uses a kernel vulnerability and can crash or reboot a device. A successful app launch or an on-screen status alone is not proof that root is available to other apps; verify root independently.
 
-## Авторы
+## Credits
 
-- [@diabl0w](https://github.com/diabl0w) — единственная авторская ссылка, которая явно указана в исходниках приложения (`MainActivity.java`).
-- [novakin777](https://github.com/novakin777) — сопровождает этот форк для Xiaomi Watch 5.
+- [@diabl0w](https://github.com/diabl0w) — the only author attribution present in the application source (`MainActivity.java`).
+- [novakin777](https://github.com/novakin777) — maintainer of this Xiaomi Watch 5 fork.
 
-## Управление часами с root
+## Root access to the watch
 
-[WearBridgeADB](https://github.com/novakin777/WearBridgeADB) может выполнять команды на часах с root-правами после того, как KernelSU выдаст root приложению WearBridge на часах. WearBridge не получает root самостоятельно.
+[WearBridgeADB](https://github.com/novakin777/WearBridgeADB) can run commands on the watch with root privileges after KernelSU grants root to the WearBridge app on the watch. WearBridge does not obtain root by itself.
 
-История изменений доступна в [CHANGELOG.md](CHANGELOG.md).
+See [CHANGELOG.md](CHANGELOG.md) for this fork's release notes.
 
-## Лицензия
+## License
 
-У разных частей репозитория могут быть разные условия распространения:
+Different parts of this repository may have different license terms:
 
-- Код форка DFRoot и исходники модуля ядра распространяются по [GNU GPL версии 3](LICENSE). Для копирования и распространения этих частей применяются условия GPL-3.0.
-- Файл [`app/src/main/jni/include.inc`](app/src/main/jni/include.inc) содержит код Odzhan под [BSD 3-Clause License](app/src/main/jni/include.inc). При его дальнейшем распространении нужно сохранить уведомление об авторском праве, условия лицензии и отказ от гарантий; использование имени автора для продвижения производных продуктов требует отдельного письменного разрешения.
-- Скрипты Gradle Wrapper [`gradlew`](gradlew) и [`gradlew.bat`](gradlew.bat) содержат материалы под [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), как указано в их заголовках.
-- Сторонние библиотеки и другие включённые материалы сохраняют собственные лицензии и уведомления. Лицензия в корне репозитория не заменяет эти условия.
+- DFRoot fork code and the kernel module source are distributed under the [GNU General Public License v3](LICENSE). GPL-3.0 governs copying and distribution of these parts.
+- [`app/src/main/jni/include.inc`](app/src/main/jni/include.inc) contains code by Odzhan under the [BSD 3-Clause License](app/src/main/jni/include.inc). Redistribution must retain its copyright notice, license conditions, and disclaimer; using the author's name to endorse or promote derived products requires prior written permission.
+- The Gradle Wrapper scripts [`gradlew`](gradlew) and [`gradlew.bat`](gradlew.bat) contain material under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0), as stated in their headers.
+- Third-party libraries and other included materials retain their own licenses and notices. The repository's root license does not replace those terms.
 
-Перед распространением изменённой сборки проверьте лицензии всех включённых компонентов и сохраните относящиеся к ним уведомления.
+Before redistributing a modified build, check the licenses of all included components and preserve their applicable notices.
 
-## Использование ИИ
+## AI assistance
 
-При подготовке изменений кода и документации использовались инструменты ИИ.
+AI tools were used to assist with code changes and documentation.
